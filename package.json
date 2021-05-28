@@ -4,7 +4,8 @@
   "description": "Simple starter kit for producing static pages",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently --kill-others \"webpack serve --mode=development --liveReload\"",
+    "start": "concurrently \"webpack serve --mode=development --liveReload\" \" npm run watch\"",
+    "watch": "webpack --watch --mode=development",
     "build": "webpack build --mode=production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

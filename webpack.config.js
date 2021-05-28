@@ -22,7 +22,7 @@ module.exports = {
             new CssMinimizerPlugin(),
         ],
     },
-    entry: './src/index.js',
+    entry: ['./src/index.js'],
     output: {
         filename: 'main.js',
         path: path.resolve(__dirname, 'dist')
@@ -30,9 +30,10 @@ module.exports = {
     target: 'web',
     devServer: {
         contentBase: path.join(__dirname, 'dist'),
+        watchContentBase: true,
         compress: true,
         port: 9000,
-        hotOnly: true,
+        hot: true,
         open: true,
     },
 }
