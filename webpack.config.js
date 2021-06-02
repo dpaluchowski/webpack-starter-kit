@@ -2,9 +2,9 @@ const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const ImageminWebpWebpackPlugin= require('imagemin-webp-webpack-plugin');
+const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
 module.exports = {
     target: 'web',
@@ -13,7 +13,7 @@ module.exports = {
     },
     plugins: [
         new MiniCssExtractPlugin(),
-        new HtmlWebpackPlugin({template: 'index.html', inject: false }),
+        new HtmlWebpackPlugin({template: 'index.html', inject: false}),
         new ImageminWebpWebpackPlugin({
             config: [{
                 test: /\.(png|jpe?g|gif)$/i,
@@ -22,7 +22,7 @@ module.exports = {
         }),
         new CopyPlugin({
             patterns: [
-                { from: "public", to: "" },
+                {from: "public", to: ""},
             ],
         }),
         new CleanWebpackPlugin({
