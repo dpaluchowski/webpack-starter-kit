@@ -2,7 +2,9 @@ const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const ImageminWebpWebpackPlugin= require("imagemin-webp-webpack-plugin");
+const ImageminWebpWebpackPlugin= require('imagemin-webp-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
     target: 'web',
@@ -15,10 +17,16 @@ module.exports = {
         new ImageminWebpWebpackPlugin({
             config: [{
                 test: /\.(png|jpe?g|gif)$/i,
-                options: {
-                    quality:  75
-                }
+                type: 'src',
             }],
+        }),
+        new CopyPlugin({
+            patterns: [
+                { from: "public", to: "" },
+            ],
+        }),
+        new CleanWebpackPlugin({
+            cleanOnceBeforeBuildPatterns: ['dist/*']
         }),
     ],
     entry: ['./src/index.js'],
@@ -35,6 +43,7 @@ module.exports = {
             },
             {
                 test: /\.(png|jpe?g|gif)$/i,
+                exclude: path.resolve(__dirname, 'public/**/*.*'),
                 use: [
                     {
                         loader: 'file-loader',

@@ -17,6 +17,7 @@
   border: 1px solid colors.$black-1;
   transition: .3s;
   box-sizing: border-box;
+  cursor: pointer;
   &:after {
     content: '';
     position: absolute;

@@ -5,14 +5,25 @@
     <meta content="width=device-width" name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
     <meta content="Static landing page" name="description">
-    <title>Document</title>
+    <title>Webpack starter kit</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ed6949">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
     <link href="main.css" rel="stylesheet">
     <script src="main.js" defer></script>
 </head>
 <body>
 <main class="Global">
-    <button class="Button Button--brand">Click Me!</button>
-    <img src="images/cat.jpg" alt="Cat">
+    <button class="Button Button--brand" data-rotate-img="true">Click Me!</button>
+    <picture>
+        <source srcset="images/cat.webp" type="image/webp">
+        <source srcset="images/cat.jpg" type="image/jpeg">
+        <img src="images/cat.jpg" alt="Example Cat">
+    </picture>
 </main>
 </body>
 </html>

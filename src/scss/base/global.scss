@@ -2,4 +2,15 @@
 
 .Global {
   font-family: fonts.$first;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 100%;
+    margin-top: 40px;
+    transition: .3s;
+  }
 }
