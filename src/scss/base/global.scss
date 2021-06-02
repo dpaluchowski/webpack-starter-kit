@@ -1,0 +1,5 @@
+@use "../utilities/fonts";
+
+.Global {
+  font-family: fonts.$first;
+}

@@ -1,2 +1,2 @@
 // components
-import '../js/components/component/component'
+import './components/LogParams'

@@ -1,0 +1,48 @@
+@use "../utilities/colors";
+@use "../utilities/fonts";
+@use "../utilities/mq";
+
+.RichText {
+  h1, h2, h3, h4, h5 {
+    font-family: fonts.$second;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 20px;
+    font-family: fonts.$first;
+  }
+
+  .small {
+    font-size: 28.8px;
+    @media(mq.$minDesktop) {
+      font-size: 36px;
+    }
+  }
+
+  .medium {
+    font-size: 37.6px;
+    @media(mq.$minDesktop) {
+      font-size: 47px;
+    }
+  }
+
+  .big {
+    font-size: 44.8px;
+    @media(mq.$minDesktop) {
+      font-size: 56px;
+    }
+  }
+
+  .bold {
+    font-weight: bold;
+  }
+
+  .brand {
+    color: colors.$brand-1;
+  }
+
+  .gray {
+    color: colors.$gray-5;
+  }
+}
