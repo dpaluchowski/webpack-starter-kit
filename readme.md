@@ -5,6 +5,7 @@ A very simple webpack starter kit that allows you to:
 * using scss, functions and variables,
 * file minification (html, css, js),
 * generating webp,
+* auto generating prefixes in css for all browsers,
 * importing your own fonts,
 * and other
 
